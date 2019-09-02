@@ -1,97 +1,35 @@
-#
-#  Be sure to run `pod spec lint yourFramework.podspec' to ensure this is a
-#  valid spec and to remove all comments including this before submitting the spec.
-#
-#  To learn more about Podspec attributes see http://docs.cocoapods.org/specification.html
-#  To see working Podspecs in the CocoaPods repo see https://github.com/CocoaPods/Specs/
-#
-
-Pod::Spec.new do |s|
-
-  # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  These will help people to find your library, and whilst it
-  #  can feel like a chore to fill in it's definitely to your advantage. The
-  #  summary should be tweet-length, and the description more in depth.
-  #
-
-  s.name         = "yourFramework"
+  Pod::Spec.new do |s|
+  s.name         = "SCConmmon"
   s.version      = "0.0.1"
-  s.summary      = "A short description of yourFramework."
-
-  # This description is used to generate tags and improve search results.
-  #   * Think: What does it do? Why did you write it? What is the focus?
-  #   * Try to keep it short, snappy and to the point.
-  #   * Write the description between the DESC delimiters below.
-  #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = <<-DESC
-                   DESC
-
-  s.homepage     = "http://EXAMPLE/yourFramework"
-  # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
-
-
-  # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  Licensing your code is important. See http://choosealicense.com for more info.
-  #  CocoaPods will detect a license file if there is a named LICENSE*
-  #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
-  #
-
-  s.license      = "MIT (example)"
-  # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
-
-
-  # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  Specify the authors of the library, with email addresses. Email addresses
-  #  of the authors are extracted from the SCM log. E.g. $ git log. CocoaPods also
-  #  accepts just a name if you'd rather not provide an email address.
-  #
-  #  Specify a social_media_url where others can refer to, for example a twitter
-  #  profile URL.
-  #
-
+  s.summary      = "FT test 0.0.1"
+  s.description  = "FT test 0.0.1 sc"
+  s.homepage     = "https://github.com/shichao666/SCCommon.git"
+  s.license      = "MIT"
   s.author             = { "shichao" => "329585013@qq.com" }
-  # Or just: s.author    = "shichao"
-  # s.authors            = { "shichao" => "329585013@qq.com" }
-  # s.social_media_url   = "http://twitter.com/shichao"
+  s.source       = { :git => "https://github.com/shichao666/SCCommon.git", :tag => "#{s.version}" }
 
-  # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  If this Pod runs only on iOS or OS X, then specify the platform and
-  #  the deployment target. You can optionally include the target after the platform.
-  #
+  s.source_files  = "SCCommon", "SCCommon/**/*.{h,m}"
+  #你的SDK路径（因为传的是静态库，这个必须要）
+  s.vendored_frameworks = 'SCCommon/Resurce/FTFramework.framework'
+  #资源文件(含bundle)
+  s.resources = "SCCommon/Resurce/FTCommonBundle.bundle"
+  #依赖库
+  s.frameworks = "Foundation", "UIKit"
 
-  # s.platform     = :ios
-  # s.platform     = :ios, "5.0"
-
-  #  When using multiple platforms
-  # s.ios.deployment_target = "5.0"
-  # s.osx.deployment_target = "10.7"
-  # s.watchos.deployment_target = "2.0"
-  # s.tvos.deployment_target = "9.0"
-
-
-  # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  Specify the location from where the source should be retrieved.
-  #  Supports git, hg, bzr, svn and HTTP.
-  #
-
-  s.source       = { :git => "http://EXAMPLE/yourFramework.git", :tag => "#{s.version}" }
+  #支持最小系统版本
+  s.platform     = :ios, "8.0"
+  #依赖的第三方，有几个写几个
+  s.dependency 'AFNetworking','~> 3.2.1'
+  s.dependency 'MJExtension', '~> 3.0.13'
+  s.dependency 'SVProgressHUD', '~> 2.2.5'
+  s.dependency 'ReactiveObjC', '~> 3.1.0'
+  s.dependency 'CYLTabBarController', '~> 1.17.22'
+  s.dependency 'DZNEmptyDataSet', '~> 1.8.1'
+  s.dependency 'SDCycleScrollView', '~> 1.75'
+# "MJExtension", "SVProgressHUD", "ReactiveObjC", "CYLTabBarController", "DZNEmptyDataSet", "SDCycleScrollView"
 
 
-  # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  CocoaPods is smart about how it includes source code. For source files
-  #  giving a folder will include any swift, h, m, mm, c & cpp files.
-  #  For header files it will include any header in the folder.
-  #  Not including the public_header_files will make all headers public.
-  #
-
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
-  s.exclude_files = "Classes/Exclude"
+  #s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
 
