@@ -1,0 +1,6 @@
+framework module FTFramework {
+  umbrella header "FTFramework.h"
+
+  export *
+  module * { export * }
+}
