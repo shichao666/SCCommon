@@ -34,7 +34,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "AFNetworking.h"
+#import <AFNetworking/AFNetworking.h>
 #import "FTAPI_URL.h"    //地址路径URL
 #import "FTDataModel.h"  //数据外层model
 #import "SVProgressHUD.h"
