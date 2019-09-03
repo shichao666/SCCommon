@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "UIScrollView+EmptyDataSet.h"
-#import "ReactiveCocoa.h"
+#import <ReactiveObjC/ReactiveObjC.h>
 @interface FTBaseTableViewController : UITableViewController<DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 
 @property (nonatomic, strong) UIButton *leftBarItemBtn;

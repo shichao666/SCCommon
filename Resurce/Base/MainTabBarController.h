@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import <CYLTabBarController.h>
+#import <CYLTabBarController/CYLTabBarController.h>
 
 @interface MainTabBarController : NSObject
 
