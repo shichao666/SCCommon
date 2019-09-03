@@ -8,11 +8,12 @@
   s.author             = { "shichao" => "329585013@qq.com" }
   s.source       = { :git => "https://github.com/shichao666/SCCommon.git", :tag => "#{s.version}" }
 
-  s.source_files  = "SCCommon", "SCCommon/**/*.{h,m}"
+  # s.source_files  = "SCCommon", "SCCommon/**/*.{h,m}"
+  s.source_files = "Resurce/Base/*.{h,m}","Resurce/NetWork/*.{*}"
   #你的SDK路径（因为传的是静态库，这个必须要）
-  s.vendored_frameworks = 'SCCommon/Resurce/FTFramework.framework'
+  s.vendored_frameworks = 'Resurce/FTFramework.framework'
   #资源文件(含bundle)
-  s.resources = "SCCommon/Resurce/FTCommonBundle.bundle"
+  s.resources = "Resurce/FTCommonBundle.bundle"
   #依赖库
   s.frameworks = "Foundation", "UIKit"
 
